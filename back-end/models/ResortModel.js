@@ -13,7 +13,7 @@ const resortSchema = new Schema({
         },
 
         imageSrc : {
-            x:String,
+            type:String,
             required : true
         },
         price :  {
