@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ResortItem = ({title,image,price}) => {
+
+const ResortItem = ({id,title,image,price}) => {
   return  (
 
     <div className="resort-card">
 
-      <a href = "/"> 
+      <Link to = {`/resorts/${id}`}> 
           <img src={image} alt=""/>   
-      </a> 
+      </Link> 
 
       <div className="resortContent">
           <h3>{title}</h3>

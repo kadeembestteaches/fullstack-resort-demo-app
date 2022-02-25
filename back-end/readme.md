@@ -1,56 +1,36 @@
-# Superhero API
+## Back-End 
 
-## Summary 
+The Back-End was completely decoupled from the Front-End, thus It was built as a REST API
 
-A simple RESTful API that allows an administrator to create, read, edit and delete superheroes destinations .
+### API End Points
 
-## Production Link : Open [Put Your Hosted Version Link Here]()
+#### GET /resorts
 
-## End Points
+The above end point returns all resorts 
 
-#### GET /superheroes
-
-The above end point returns all superheros and their respective location(s).
-
-The above end point also allow you to filter hereoes by passing any of the below query string parameters :
+The above end point also allow you to filter users by passing the below query string parameters :
 
 | Parameter | Description                                    |
 | --------- | ---------------------------------------------- |
-| Type      | Comic Type                                     |
-| min_age   | Minimum age preference                         |
-| max_age   | Maximum age preference                         |
+| featured  | true or false value                            |
 
 
-#### POST /superheroes
 
-The above end point creates a . You must submit the superhero data in the body of the request (as JSON), The data includes  :
+#### POST /resorts
 
-heroName (required),
-realName (required),
-age (required),
-gender (optional),
-universeType(required)
+The above end point creates a resort. You must submit the user data in the body of the request (as JSON), specifically structured as the below  :
 
+| Body Field(s)|
+| ------------ |
+| title        | 
+| description  |
+| imageSrc     |
+| price        |
+| bestSeller   |
 
-#### GET /superheroes/id
+#### GET /resorts/id
 
-The above end point returns a superhero based on the id provided.
-
-
-### PUT /superheroes/id
-
-The above end point updates a superhero based on the id provided. The client application is required to submit the hero data ,in the body of the request (as JSON), that is required to be updated: The data includes : :
-
-heroName 
-realName 
-age 
-gender,
-universeType
-
-
-### DELETE /superheroes/id
-
-The above end point returns a superhero based on the id provided.
+The above end point returns  a specific end, based on the id passed in the URL
 
 
 ### Rules to Set up Back-End (Locally)
@@ -60,7 +40,6 @@ The above end point returns a superhero based on the id provided.
 1. Create a folder within the project called **config**  This config folder must be on the root.
 1. Within the **config** folder, create a file called **keys.env**
 1. Within the **keys.env** file, create the below environment variables :
-      - **MONGO_DB_CONNECTION** - Assign your MongoDB Database Connection String for your Test cases. Ensure that this value points to a different database because the data for this will b wiped after your test cases run.
+   - **MONGO_DB_CONNECTION** - Assign your MongoDB Database Connection String to the variable.
+      - **PORT** - Assign your PORT number. Ensure that it is not the same as the PORT Number that your Front-End Application is listening to. You can set 5000
 1. Run application (locally) by running : **npm run dev**
-
-
